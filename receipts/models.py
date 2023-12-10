@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Receipt(models.Model):
     store_name = models.CharField(max_length=100)
     date_of_purchase = models.DateField()
@@ -10,4 +11,3 @@ class Receipt(models.Model):
 
     def __str__(self):
         return f"{self.store_name} - {self.date_of_purchase}"
-
