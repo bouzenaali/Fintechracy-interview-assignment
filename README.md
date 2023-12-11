@@ -8,18 +8,17 @@ follow this instructions to setup the project on your local machine
 ```bash
 git clone https://github.com/bouzenaali/Fintechracy-interview-assignment.git
 ```
-
 - create a virtual environment
 ```bash
 python3 -m venv env
 ```
 
-- activate the virtual environment
-for windows
+- activate the virtual environment: <br>
+for `windows`
 ```bash
 env\Scripts\activate
-```
-for a unix based system
+``` 
+&emsp; for a `linux` and `mac`
 ```bash
 source env/bin/activate
 ```
