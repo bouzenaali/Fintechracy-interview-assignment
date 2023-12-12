@@ -7,10 +7,11 @@ from django.contrib.auth import logout as auth_logout
 def index(request):
     if request.user.is_authenticated:
         return redirect('receipts:list')
-    else:   
+    else:
         return render(request, 'authentication/base.html')
 
-# Sign up 
+
+# Sign up
 def signup(request):
     if (request.method == 'POST'):
         form = SignUpForm(request.POST)
@@ -26,7 +27,8 @@ def signup(request):
         'form': form
     })
 
-# Logout 
+
+# Logout
 def logout(request):
     auth_logout(request)
     return redirect('authentication:login')

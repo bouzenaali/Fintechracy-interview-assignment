@@ -3,7 +3,8 @@ from .models import Receipt
 from django.contrib.auth.decorators import login_required
 from .forms import NewReceiptForm, EditReceiptForm
 
-## CRUD Operations views ##
+
+# CRUD Operations views ##
 @login_required
 def new(request):
     if request.method == 'POST':
@@ -17,13 +18,14 @@ def new(request):
         form = NewReceiptForm()
 
     return render(request, 'receipts/form.html', {
-        'form':form,
-        'title':'New Receipt',
+        'form': form,
+        'title': 'New Receipt',
     })
 
+
 @login_required
-def edit(request,pk):
-    receipt = get_object_or_404(Receipt, pk=pk, created_by = request.user)
+def edit(request, pk):
+    receipt = get_object_or_404(Receipt, pk=pk, created_by=request.user)
     if request.method == 'POST':
         form = EditReceiptForm(request.POST, request.FILES, instance=receipt)
         if form.is_valid():
@@ -33,27 +35,29 @@ def edit(request,pk):
         form = EditReceiptForm(instance=receipt)
 
     return render(request, 'receipts/form.html', {
-        'form':form,
-        'title':'Edit Receipt',
+        'form': form,
+        'title': 'Edit Receipt',
     })
+
 
 @login_required
 def delete(request, pk):
-    receipt = get_object_or_404(Receipt, pk=pk, created_by = request.user)
+    receipt = get_object_or_404(Receipt, pk=pk, created_by=request.user)
     receipt.delete()
 
     return redirect('receipts:list')
 
-## READ views ##
+
+# READ views ##
 @login_required
 def ListReceipts(request):
     receipts = Receipt.objects.filter(created_by=request.user)
 
     return render(request, 'receipts/index.html', {'receipts': receipts})
 
+
 @login_required
 def DetailReceipt(request, pk):
     receipt = get_object_or_404(Receipt, pk=pk)
 
     return render(request, 'receipts/detail.html', {'receipt': receipt})
-

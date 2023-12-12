@@ -4,10 +4,11 @@ from .models import Receipt
 
 INPUT_CLASSES = 'w-full py-4 px-6 rounded-xl border'
 
+
 class NewReceiptForm(forms.ModelForm):
     class Meta:
         model = Receipt
-        fields = ('store_name','date_of_purchase', 'item_list', 'total_amount')
+        fields = ('store_name', 'date_of_purchase', 'item_list', 'total_amount')
         widgets = {
             'store_name': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
@@ -25,14 +26,14 @@ class NewReceiptForm(forms.ModelForm):
                 'class': INPUT_CLASSES
             }),
 
-            
+
         }
 
 
 class EditReceiptForm(forms.ModelForm):
     class Meta:
         model = Receipt
-        fields = ('store_name','date_of_purchase', 'item_list', 'total_amount')
+        fields = ('store_name', 'date_of_purchase', 'item_list', 'total_amount')
         widgets = {
             'store_name': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
@@ -50,5 +51,3 @@ class EditReceiptForm(forms.ModelForm):
                 'class': INPUT_CLASSES
             }),
         }
-
-       
