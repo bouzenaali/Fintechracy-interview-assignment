@@ -18,7 +18,7 @@ for `windows`
 ```bash
 env\Scripts\activate
 ``` 
-&emsp; for a `linux` and `mac`
+&emsp; for `linux` and `mac`
 ```bash
 source env/bin/activate
 ```

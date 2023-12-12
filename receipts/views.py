@@ -28,7 +28,7 @@ def edit(request,pk):
         form = EditReceiptForm(request.POST, request.FILES, instance=receipt)
         if form.is_valid():
             receipt.save()
-            return redirect('receipts:detail', pk=Receipt.id)
+            return redirect('receipts:detail', pk=receipt.id)
     else:
         form = EditReceiptForm(instance=receipt)
 
