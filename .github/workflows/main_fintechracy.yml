@@ -33,6 +33,12 @@ jobs:
       - name: Run collectstatic
         run: python manage.py collectstatic --noinput
 
+      - name: Apply Django Make Migrations
+        run: python manage.py makkemigrations
+
+      - name: Apply Django Migrate
+        run: python manage.py migrate
+      
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
