@@ -2,8 +2,11 @@ asgiref==3.7.2
 Django==5.0
 flake8==6.1.0
 mccabe==0.7.0
+psycopg2==2.9.9
 pycodestyle==2.11.1
 pyflakes==3.1.0
+python-dotenv==1.0.0
 sqlparse==0.4.4
 typing_extensions==4.9.0
 tzdata==2023.3
+whitenoise==6.6.0
