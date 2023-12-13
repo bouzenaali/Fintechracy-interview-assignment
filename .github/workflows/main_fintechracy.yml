@@ -34,7 +34,7 @@ jobs:
         run: python manage.py collectstatic --noinput
 
       - name: Apply Django Make Migrations
-        run: python manage.py makkemigrations
+        run: python manage.py makemigrations
 
       - name: Apply Django Migrate
         run: python manage.py migrate
