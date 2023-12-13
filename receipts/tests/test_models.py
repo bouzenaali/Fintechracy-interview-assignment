@@ -3,6 +3,7 @@ from receipts.models import Receipt, User
 
 class ReceiptModelTest(TestCase):
     def test_receipt_creation(self):
+        # Create a test user
         user = User.objects.create_user(username='testuser', password='testpassword')
         receipt = Receipt.objects.create(
             store_name='Test Store',
