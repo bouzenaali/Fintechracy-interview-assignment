@@ -38,3 +38,7 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+## Demo
+You can see a demo of the app 
+[HERE](https://drive.google.com/file/d/1yI7p9EvdMQYRMOTI0VsZk05vLLHEaj_7/view?usp=sharing)
